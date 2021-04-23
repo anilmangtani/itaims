@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/static/css/cart.css">
+
+<% if(session.cart) { %>
+    <div class="orderContainer">
+        <div class="orderContainerHead">
+            <div class="OCH-imgContainer"><img src="/static/images/Fillcart.jpg" alt="" srcset="" height="100%" width="100%" /></div>
+            <h1>Order Summary </h1>
+        </div>
+
+        
+        
+          <% for(let productitems of Object.values(session.cart.items)) { %>  
+            <div class="orderContainerItems">
+            <div class="OCI-ImgContainer">
+                <img src="" alt="this image is not supported" srcset="" height="100%" width="100%" />
+            </div>
+            <div class="OCI-name-info">
+                <h1><%= productitems.items.name %></h1>
+            </div>
+            <div class="OCI-qty">
+                <p><%= productitems.qty %></p>
+            </div>
+            <div class="OCI-price">
+                <p><%= productitems.items.price * productitems.qty %></p>
+            </div>
+        </div>
+      <% } %>
+
+        <div class="greyLine"></div>
+
+        <!-- Makingthe total amount section -->
+        <div class="total-Amt-Container">
+            <div class="total-Amount">
+                <span class="totalAmount-Heading"> Total Amount : </span>
+                <span class="totalAmount-Price"><%= session.cart.totalprice %></span>
+            </div>
+        </div>
+        <% if(user) { %>
+        <div class="Ship-Information">
+            <form class="Ship-Info" action="/orders" method="POST">
+                <input class="ShipAdrsCl" type="text" name="shipaddress" id="ShipAdrsId" placeholder="Enter Your Shiping Address" />
+                <input class="ShipPhoneCl" type="text" name="phone" id="ShipPhoneId" placeholder="Enter your Phone Number" />
+                <input class="Shipbtn" type="submit" value="Order Now" />
+            </form>
+        </div>
+<% } else { %>
+        <div class="cartLogin">
+            <a href="/login">Login to Order</a>
+        </div>
+<% } %>
+    </div>
+   
+
+    <% } else { %>
+    <!-- section.emptycart-->
+    
+    <section class="emptycart">
+        <link rel="stylesheet" href="/static/css/cart.css">
+        <div class="Empty-Cart-Container">
+        <h1>Cart Empty</h1>
+        <p>You probably havent ordered anything yet. </p>
+        <p>To Order Anything go to the Main page.</p>
+        <img src="" alt="this image is not supported by your browser" srcset="" />
+        <a href="/">Go Back </a>
+        </div>
+    </section> 
+  
+    <% } %>
+</main>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/static/js/cart.js"></script>
+</body>

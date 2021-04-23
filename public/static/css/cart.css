@@ -1,0 +1,139 @@
+/*Styling the cart*/
+
+/*Styling the Box of the Cart*/
+.orderContainer{
+    width: 80%;
+
+    margin:10px auto;
+
+}
+/*styling the heading of the Cart Container Box*/
+.orderContainerHead{
+    display: flex;
+    gap :20px;
+    border-bottom: 1px solid grey;
+}
+.orderContainerHead h1{
+    font-weight: 400;
+    font-size: 1.5em;
+}
+.OCH-imgContainer{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+/*styling te items in the container box*/
+.orderContainerItems{
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+    border-bottom: 1px solid grey;
+}
+.OCI-name-info h1{
+    margin: 20px auto 0px auto;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+.OCI-ImgContainer{
+    height:150px;
+    width:150px;
+    border: 1px solid black;
+}
+.OCI-qty p, .OCI-price{
+    font-size: 1.25em;
+}
+.greyLine{
+    border-bottom:1px solid grey;
+}
+/*styling thw total amount section*/
+.total-Amt-Container{
+    text-align: right;
+    padding:10px;
+    font-weight: bold;
+}
+.totalAmount-Price{
+    font-size: 1.25em;
+    color: rgb(45, 78, 7);
+}
+/*styling thr form in the Order*/
+.Ship-Info{
+    display:grid;
+    position: relative;
+
+}
+.Ship-Info input{
+    margin:5px auto;
+    height: 30px;
+    width: 50%;
+    outline:blue;
+}
+.Ship-Info .Shipbtn{
+    width: 20%;
+    border-radius: 10px;
+    outline: none;
+    border: 3px solid rgb(241, 26, 26);
+    background-color: white;
+
+}
+.Ship-Info .Shipbtn:hover{
+    background-color: rgb(241, 26, 26);
+    transition: .5s;
+}
+
+/*Styling the empty card*/
+.Empty-Cart-Container{
+    text-align: center;
+    
+}
+.Empty-Cart-Container h1{
+    font-size: 3.5em;
+    text-transform: capitalize;
+    font-family: serif; 
+    font-weight: 400;
+    margin-bottom: 20px; 
+}
+.Empty-Cart-Container p{
+    margin: 10px auto 0px auto;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    color:grey
+}
+.Empty-Cart-Container a{
+    width: 100px;
+    padding : 10px;
+    display :block;
+    border : 3px solid rgb(255, 51, 0);
+    border-radius: 30px;
+    margin : 5px auto 0px auto;
+    text-decoration: none;
+}
+.Empty-Cart-Container a:hover{
+    background-color: rgb(255, 51, 0);
+    color: white;
+    transition: .3s;
+}
+
+
+/*Styling the login to order button*/
+.cartLogin{
+    position: relative;
+    left: 80%;
+    border:1px solid black;
+    width: fit-content;
+    height: 40px;
+    border-radius: 30px;
+    background-color: orangered;
+    overflow: hidden;
+}
+.cartLogin a{
+    color:black;
+    text-decoration: none;
+    padding: 20px;
+    position: relative;
+    top: 10px;
+}
+.cartLogin a:hover{
+    background-color: rgb(238, 225, 221);
+    color:orangered;
+}

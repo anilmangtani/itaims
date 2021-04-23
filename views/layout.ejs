@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="itcurds">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Page</a></li>
+        
+        <% if(user) { %>
+            <form id="logout" action="/logout" method="POST">
+            <li><a onclick="document.getElementById('logout').submit()" href="#">Logout</a></li>
+            </form>
+        <% } else { %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/singup">Signup</a></li>
+        <% } %>
+        
+        <li><a href="#">Cart</a>
+            <span id="CartCounter"> <%= session.cart ? session.cart.totalQty : " " %></span>    
+        </li>
+    </ul>
+</div>
+
+<%- body %>
+
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script   src="/static/js/cart.js"></script>
